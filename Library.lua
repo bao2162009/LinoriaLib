@@ -161,7 +161,7 @@ local Templates = {
         Title = "No Title",
         Footer = "No Footer",
         Position = UDim2.fromOffset(6, 6),
-        Size = UDim2.fromOffset(600, 600),
+        Size = UDim2.fromOffset(900, 600),
         IconSize = UDim2.fromOffset(30, 30),
         AutoShow = true,
         Center = true,
@@ -4862,6 +4862,7 @@ function Library:CreateWindow(WindowInfo)
         local TabContainer
         local TabLeft
         local TabRight
+        local TabMid
 
         local WarningBox
         local WarningTitle
@@ -5269,7 +5270,7 @@ function Library:CreateWindow(WindowInfo)
         end
 
         function Tab:AddMidGroupbox(Name, IconName)
-            return Tab:AddGroupbox({ Side = 1, Name = Name, IconName = IconName })
+            return Tab:AddGroupbox({ Side = 3, Name = Name, IconName = IconName })
         end
 
         function Tab:AddTabbox(Info)
