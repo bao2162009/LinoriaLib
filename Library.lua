@@ -4980,7 +4980,7 @@ function Library:CreateWindow(WindowInfo)
                 AutomaticCanvasSize = Enum.AutomaticSize.Y,
                 BackgroundTransparency = 1,
                 CanvasSize = UDim2.fromScale(0, 0),
-                Position = UDim2.fromScale(0.5, 0),
+                Position = UDim2.new(0, math.floor(TabContainer.AbsoluteSize.X / 3) + 2, 0, 0),
                 ScrollBarThickness = 0,
                 Parent = TabContainer,
             })
