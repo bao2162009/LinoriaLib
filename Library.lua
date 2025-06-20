@@ -5141,14 +5141,22 @@ function Library:CreateWindow(WindowInfo)
             end
 
             local Offset = WarningBox.Visible and WarningBox.AbsoluteSize.Y + 6 or 0
-            for _, Side in pairs(Tab.Sides) do
-                Side.Position = UDim2.new(Side.Position.X.Scale, 0, 0, Offset)
-                Side.Size = UDim2.new(0, math.floor(TabContainer.AbsoluteSize.X / 3) - 3, 1, -Offset)
-                Library:UpdateDPI(Side, {
-                    Position = Side.Position,
-                    Size = Side.Size,
-                })
-            end
+            for i, Side in pairs(Tab.Sides) do
+    local xScale = 0  -- Default cho TabLeft
+    
+    if i == 2 then      -- TabRight
+        xScale = 1
+    elseif i == 3 then  -- TabMid  
+        xScale = 0.5    -- Giữa (50%)
+    end
+    
+    Side.Position = UDim2.new(xScale, 0, 0, Offset)
+    Side.Size = UDim2.new(0, math.floor(TabContainer.AbsoluteSize.X / 3) - 3, 1, -Offset)
+    Library:UpdateDPI(Side, {
+        Position = Side.Position,
+        Size = Side.Size,
+    })
+end
         end
 
         function Tab:AddGroupbox(Info)
