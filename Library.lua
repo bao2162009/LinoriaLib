@@ -5269,7 +5269,7 @@ function Library:CreateWindow(WindowInfo)
         end
 
         function Tab:AddMidGroupbox(Name, IconName)
-            return Tab:AddGroupbox({ Side = 3, Name = Name, IconName = IconName })
+            return Tab:AddGroupbox({ Side = 1, Name = Name, IconName = IconName })
         end
 
         function Tab:AddTabbox(Info)
